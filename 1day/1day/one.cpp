@@ -1,26 +1,33 @@
 #include <stdio.h>
-void print(char* string) {
+
+int print_(int d) {
+	printf("%d\n", d);
+	return d;
+}
+
+char* print(char* string) {
 	printf(string);
+	return string;
 }
 const char* name= "wonho\n";
 _declspec(naked) void main(void) {
 	_asm {
 		
-		mov edx, name;
-		mov ebx, edx;
-		add edx, 5
+		mov ebx, 5;
+		mov eax, name;
+		add ebx, name;
 
 		stay:
 
-		push ebx;
+		push eax;
 		call print;
+		add eax, 1;
 
-		add ebx, 1
-
-		cmp edx, ebx;
-		jne stay
+		cmp eax, ebx
+		je a
+		jmp stay
 
 		a:
-		jmp a;
+		jmp a
 	}
 }

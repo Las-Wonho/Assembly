@@ -5,10 +5,12 @@ void print(char* string) {
 const char* name= "wonho";
 _declspec(naked) void main(void) {
 	_asm {
+		mov ecx, name;
+
 		push 0;
 		popf
 		
-		push name;
+		push ecx;
 
 		call print;
 

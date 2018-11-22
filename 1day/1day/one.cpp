@@ -7,6 +7,8 @@ _declspec(naked) void main(void) {
 	_asm {
 		mov ecx, name;
 
+		add ecx, 1;
+
 		push 0;
 		popf
 		

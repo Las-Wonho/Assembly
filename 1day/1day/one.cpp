@@ -2,21 +2,25 @@
 void print(char* string) {
 	printf(string);
 }
-const char* name= "wonho";
+const char* name= "wonho\n";
 _declspec(naked) void main(void) {
 	_asm {
-		mov ecx, name;
-
-		add ecx, 1;
-
-		push 0;
-		popf
 		
-		push ecx;
-
-		call print;
+		mov edx, name;
+		mov ebx, edx;
+		add edx, 5
 
 		stay:
-		jmp stay;
+
+		push ebx;
+		call print;
+
+		add ebx, 1
+
+		cmp edx, ebx;
+		jne stay
+
+		a:
+		jmp a;
 	}
 }

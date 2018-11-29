@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include<iostream>
 using namespace std;
-int Add(int a, int b) {
+int Add(float a, float b) {
 	__asm {
 		mov eax, a;
 		add eax, b;

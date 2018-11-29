@@ -1,9 +1,8 @@
 #include"numeric.h"
 int Numeric::AddTowNumber(int a, int b) {
-	int tmp=0;
-	int* p_tmp = &tmp;
 	__asm {
-		
+		mov eax, a;
+		mov ebx, b;
+		add eax, ebx;
 	}
-	return 0;
 }

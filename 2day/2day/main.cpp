@@ -5,7 +5,7 @@ void main() {
 	auto t=0;
 
 	_asm{
-		mov t, 40;
+		mov t, 6464;
 	};
 	cout << t;
 	for (;;);
